@@ -1,0 +1,48 @@
+// Prisma schema for BEN-BEN Tortas Ahogadas
+// Sistema de gestión de ventas diarias
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Catálogo de productos del menú
+model Producto {
+  id          String   @id @default(cuid())
+  nombre      String
+  categoria   String   // "tortas" | "tacos" | "paquetes" | "especialidad" | "bebidas"
+  precio      Float
+  disponible  Boolean  @default(true)
+  notas       String?  // ej: "solo sábado y domingo"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  ventas      VentaItem[]
+}
+
+// Registro de cada venta
+model Venta {
+  id          String   @id @default(cuid())
+  fecha       DateTime @default(now())
+  total       Float
+  metodoPago  String   // "efectivo" | "tarjeta" | "transferencia"
+  nota        String?  // opcional: detalles, domicilio, etc
+  items       VentaItem[]
+  createdAt   DateTime @default(now())
+}
+
+// Items de cada venta (relación N a 1 con Venta y Producto)
+model VentaItem {
+  id          String   @id @default(cuid())
+  ventaId     String
+  productoId  String?
+  productoNombre String  // snapshot del nombre al momento de la venta
+  precio      Float    // snapshot del precio al momento de la venta
+  cantidad    Int
+  subtotal    Float
+  venta       Venta    @relation(fields: [ventaId], references: [id], onDelete: Cascade)
+  producto    Producto? @relation(fields: [productoId], references: [id])
+}

@@ -1,0 +1,161 @@
+/* dark theme applied */
+/* updated to #105131 */
+/* updated colors */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Colores de marca BEN-BEN — paleta premium híbrida */
+  /* Inspirada en el uniforme real: playera negra + mandil verde */
+  --color-benben-green: #105131;        /* Verde de la publicidad oficial */
+  --color-benben-green-dark: #0A3622;  /* Versión más oscura */
+  --color-benben-green-light: #1B5E20; /* Versión más clara */
+  --color-benben-black: #0A0A0A;       /* Negro principal (playera) */
+  --color-benben-black-soft: #1A1A1A;  /* Negro para tarjetas */
+  --color-benben-black-warm: #2A1F1A;  /* Negro con tono cálido */
+  --color-benben-cream: #FFF8E1;       /* Crema — texto principal */
+  --color-benben-cream-warm: #F5E6C8;  /* Crema cálido */
+  --color-benben-red: #C8102E;
+  --color-benben-orange: #F77F00;
+  --color-benben-blue: #1E3A8A;
+  --color-benben-brown: #3D2817;       /* Fondo marrón del logo */
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #0A0A0A;            /* Negro principal premium */
+  --foreground: #FFF8E1;              /* Crema para texto */
+  --card: #1A1A1A;                    /* Tarjetas oscuras */
+  --card-foreground: #FFF8E1;
+  --popover: #1A1A1A;
+  --popover-foreground: #FFF8E1;
+  --primary: #105131;                /* Verde de publicidad */
+  --primary-foreground: #FFF8E1;
+  --secondary: #2A2A2A;
+  --secondary-foreground: #FFF8E1;
+  --muted: #2A2A2A;
+  --muted-foreground: #A0A0A0;        /* Gris para texto secundario */
+  --accent: #F77F00;
+  --accent-foreground: #FFFFFF;
+  --destructive: #C8102E;
+  --border: #2A2A2A;
+  --input: #2A2A2A;
+  --ring: #105131;
+  --chart-1: #105131;
+  --chart-2: #C8102E;
+  --chart-3: #F77F00;
+  --chart-4: #1E3A8A;
+  --chart-5: #F5E6C8;
+  --sidebar: #0A0A0A;
+  --sidebar-foreground: #FFF8E1;
+  --sidebar-primary: #105131;
+  --sidebar-primary-foreground: #FFF8E1;
+  --sidebar-accent: #2A2A2A;
+  --sidebar-accent-foreground: #FFF8E1;
+  --sidebar-border: #2A2A2A;
+  --sidebar-ring: #105131;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+}
+
+/* Patrón de textura sutil para fondos */
+.bg-pattern-verde {
+  background-color: #105131;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 248, 225, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(247, 127, 0, 0.05) 0%, transparent 50%);
+}
+
+.bg-pattern-crema {
+  background-color: #0A0A0A;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(16, 81, 49, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(247, 127, 0, 0.04) 0%, transparent 50%);
+}
+
+.bg-pattern-negro {
+  background-color: #0A0A0A;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(16, 81, 49, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(247, 127, 0, 0.04) 0%, transparent 50%);
+}
+
+/* Animación de pulso para destacar */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+/* Estilos de impresión para el código QR */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printable-qr, .printable-qr * {
+    visibility: visible;
+  }
+  .printable-qr {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
