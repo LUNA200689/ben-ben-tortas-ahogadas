@@ -78,51 +78,7 @@ export function InfoNegocio() {
           </div>
         </section>
 
-        {/* ESTATUS LEGAL */}
-        <section className="bg-benben-orange/10 border-l-4 border-benben-orange rounded-r-2xl p-6">
-          <h2 className="font-display font-black text-xl text-benben-orange mb-4 flex items-center gap-2">
-            <AlertTriangle className="w-5 h-5" />
-            Estatus legal: requiere atención
-          </h2>
-          <div className="space-y-3 text-sm">
-            <div className="flex gap-3 items-start">
-              <span className="shrink-0 w-5 h-5 rounded-full bg-benben-red text-white text-xs font-bold flex items-center justify-center mt-0.5">!</span>
-              <div>
-                <p className="font-bold text-benben-cream">Permiso municipal vencido</p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  Mencionas que el permiso se venció hace tiempo. Esto es prioritario.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-3 items-start">
-              <span className="shrink-0 w-5 h-5 rounded-full bg-benben-red text-white text-xs font-bold flex items-center justify-center mt-0.5">!</span>
-              <div>
-                <p className="font-bold text-benben-cream">Sin registro de ventas o inventario</p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  La app de gestión que estás usando ahora te ayuda a empezar a llevar registro.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-3 items-start">
-              <span className="shrink-0 w-5 h-5 rounded-full bg-benben-green text-white text-xs font-bold flex items-center justify-center mt-0.5">✓</span>
-              <div>
-                <p className="font-bold text-benben-cream">Cuenta con ficha en Google Maps</p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  290+ reseñas con calificación 4.7. ¡Eso es oro! No dejes que se pierda.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-3 items-start">
-              <span className="shrink-0 w-5 h-5 rounded-full bg-benben-green text-white text-xs font-bold flex items-center justify-center mt-0.5">✓</span>
-              <div>
-                <p className="font-bold text-benben-cream">Aceptas tarjeta y transferencia</p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  Estando ya bancarizado, podrías tramitar facturación electrónica más fácilmente.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         {/* PASOS PARA REGULARIZAR */}
         <section className="bg-benben-black-soft rounded-2xl p-6 border border-benben-green/30 shadow-sm">
